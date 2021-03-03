@@ -38,7 +38,7 @@ public class OcrService {
 		try {
 			BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(image.getBytes()));
 			Tesseract tesseract = new Tesseract();
-			tesseract.setDatapath(LoadLibs.extractTessResources("tessdata").getPath());
+			tesseract.setDatapath("src/main/resources/tessdata");
 			tesseract.setLanguage("eng");
 			tesseract.setPageSegMode(1);
 			tesseract.setOcrEngineMode(1);
