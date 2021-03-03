@@ -36,9 +36,6 @@ public class OcrService {
 	private String getText(MultipartFile image) {
 		String text;
 		try {
-			File libPath = LoadLibs.extractTessResources("linux-x86-64");
-			System.setProperty("java.library.path", libPath.getPath());
-
 			BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(image.getBytes()));
 			Tesseract tesseract = new Tesseract();
 			tesseract.setDatapath("src/main/resources/tessdata");
